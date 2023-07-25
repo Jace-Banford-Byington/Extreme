@@ -74,11 +74,11 @@ function captureOpponentPieces(row, col, rowDirection, colDirection) {
     if (r >= 0 && r < gameBoard && c >= 0 && c < gameBoard && board[r][c] === opponent) {
       board[r][c] = boardEmpty;
       if (opponent === playerOne) {
-        player1Captured++;
-        document.getElementById('playerOneCapturedText').textContent = `${playerOneName} Captured: ${player1Captured}`;
+        playerOneCaptured++;
+        document.getElementById('playerOneCapturedText').textContent = `${playerOneName} Captured: ${playerOneCaptured}`;
       } else {
-        player2Captured++;
-        document.getElementById('playerTwoCapturedText').textContent = `${playerTwoName} Captured: ${player2Captured}`;
+        playerTwoCaptured++;
+        document.getElementById('playerTwoCapturedText').textContent = `${playerTwoName} Captured: ${playerTwoCaptured}`;
       }
       captureOpponentPieces(r, c, rowDirection, colDirection);
     }
