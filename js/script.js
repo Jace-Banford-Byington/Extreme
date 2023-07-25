@@ -114,16 +114,16 @@ function countMoves(rowDirection, colDirection) {
     board[row][col] = currentPlayer;
     makeGameBoard();
 
-    const winCount = checkWin(row, col);
+    const count = checkWin(row, col);
 
-    if (winCount === winCount) {
+    if (count === winCount) {
       alert(`${currentPlayer === playerOne ? playerOneName : playerTwoName} wins with 5 in a row!`);
       gameOver = true;
-    } else if (winCount === countFour) {
+    } else if (count === countFour) {
       alert(`${currentPlayer === playerOne ? playerOneName : playerTwoName} has 4 in a row!`);
-    } else if (winCount >= countThree) {
-      let message = `${currentPlayer === playerOne ? playerOneName : playerTwoName} has ${winCount} in a row!`;
-      if (winCount === countThree) {
+    } else if (count >= countThree) {
+      let message = `${currentPlayer === playerOne ? playerOneName : playerTwoName} has ${count} in a row!`;
+      if (count === countThree) {
         message += "\nCapturing opponent's pieces!";
       }
       alert(message);
@@ -162,11 +162,10 @@ function countMoves(rowDirection, colDirection) {
   }
 
   function setupEventListeners() {
-    const cells = document.getElementsByClassName('cell');
-    for (const cell of cells) {
-      cell.addEventListener('click', handleCellClick);
-    }
-  }
+    const boardContainer = document.getElementById('board');
+    boardContainer.addEventListener('click', handleCellClick);
+}
+
 
   function startGame() {
     getBoard();
