@@ -1,10 +1,48 @@
+:root {
+	--tea-rose-red: #e5c2c0ff;
+	--celadon: #8fd5a6ff;
+	--shamrock-green: #329f5bff;
+	--sea-green: #0c8346ff;
+	--caribbean-current: #0d5d56ff;
+  --color: #181818;
+}
+
+body{
+  background-color: var(--caribbean-current);
+  color: var(--color)
+}
+
+h1{
+  text-align: center;
+}
+
+.form{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.form .inputs{
+  background-color: var(--shamrock-green);
+  padding: 1%;
+  border-radius: 5px;
+}
+
+input{
+  border-radius: 5px;
+  margin: 1%;
+			width: 100%;
+}
+
 .board {
-    display: grid;
-    grid-template-columns: repeat(19, 30px);
-    grid-template-rows: repeat(19, 30px);
-  }
-  .cell {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
-  }
+  background-color: var(--sea-green);
+	display: grid;
+	grid-template-columns: repeat(19, 30px);
+	grid-template-rows: repeat(19, 30px);
+}
+
+.cell {
+	width: 30px;
+	height: 30px;
+	border: 1px solid var(--color);
+}

@@ -146,9 +146,9 @@ function countMoves(rowDirection, colDirection) {
         cell.dataset.row = i;
         cell.dataset.col = q;
         if (board[i][q] === playerOne) {
-          cell.style.backgroundColor = 'black';
+          cell.style.backgroundColor = '#e5c2c0ff';
         } else if (board[i][q] === playerTwo) {
-          cell.style.backgroundColor = 'red';
+          cell.style.backgroundColor = '#8fd5a6ff';
         }
         container.appendChild(cell);
       }
