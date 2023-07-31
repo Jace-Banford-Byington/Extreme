@@ -1,20 +1,28 @@
-<link rel="stylesheet" href="./css/style.css" />
-<script src="./js/script.js" defer></script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pente Game</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<script src="./js/script.js" defer></script>
+	</head>
 
-<h1>Pente Game</h1>
-<div class="form">
-	<div class="inputs">
-		<label for="playerOneName" class="p1">Player One Name:</label>
-		<input type="text" id="playerOneName" />
+	<body>
+		<h1>Pente Game</h1>
+		<div class="form">
+			<div class="inputs">
+				<label for="playerOneName" class="p1">Player One Name:</label>
+				<input type="text" id="playerOneName" />
+				<br />
+				<label for="playerTwoName">Player Two Name:</label>
+				<input type="text" id="playerTwoName" />
+				<p id="playerOneCapturedText"></p>
+				<p id="playerTwoCapturedText"></p>
+			</div>
+		</div>
 		<br />
-		<label for="playerTwoName">Player Two Name:</label>
-		<input type="text" id="playerTwoName" />
-		<p id="playerOneCapturedText"></p>
-		<p id="playerTwoCapturedText"></p>
-	</div>
-</div>
-<br />
-<br />
-<div class="form">
-	<div class="board" id="board"></div>
-</div>
+		<br />
+		<div class="form">
+			<div class="board" id="board"></div>
+		</div>
+	</body>
+</html>
