@@ -18,7 +18,7 @@
 }
 body {
 	background-color: var(--dark-moss-green);
-	color: var(--color);
+	color: var(--black-bean);
 }
 
 h1 {
@@ -45,6 +45,9 @@ input {
 	border-radius: 5px;
 	margin: 1%;
 	width: 100%;
+  background-color: var(--orange-peel);
+  border: 2px solid var(--ochre);
+  color: var(--black-bean);
 }
 
 .board {
