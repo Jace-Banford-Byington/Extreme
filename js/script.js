@@ -29,7 +29,6 @@ function getBoard(){
 function getNames(){
     playerOneName = document.getElementById('playerOneName').value.trim() || 'Player One';
     playerTwoName = document.getElementById('playerTwoName').value.trim() || 'Player Two';
-    console.log("Got the names", playerOneName, playerTwoName)
 }
 
 function checkWin(row, col) {
@@ -75,13 +74,19 @@ function captureOpponentPieces(row, col, rowDirection, colDirection) {
     if (r >= 0 && r < gameBoard && c >= 0 && c < gameBoard && board[r][c] === opponent) {
       board[r][c] = boardEmpty;
       if (opponent === playerOne) {
-        playerOneCaptured++;
-        document.getElementById('playerOneCapturedText').textContent = `${playerOneName} Captured: ${playerOneCaptured}`;
+        playerOneCaps++;
+        document.getElementById('playerOneCapturedText').textContent = `${playerOneName} Captured: ${playerOneCaps}`;
+        alert(`${playerOneName} captured ${playerOneCaps}`)
       } else {
-        playerTwoCaptured++;
-        document.getElementById('playerTwoCapturedText').textContent = `${playerTwoName} Captured: ${playerTwoCaptured}`;
+        playerTwoCaps++;
+        document.getElementById('playerTwoCapturedText').textContent = `${playerTwoName} Captured: ${playerTwoCaps}`;
+        alert(`${playerTwoName} captured ${playerTwoCaps}`)
+
       }
+    
+
       captureOpponentPieces(r, c, rowDirection, colDirection);
+
     }
   }
 
