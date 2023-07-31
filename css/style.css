@@ -1,3 +1,4 @@
+/* variables */
 :root {
 	--burgundy: #77091cff;
 	--blood-red: #611402ff;
@@ -12,10 +13,12 @@
 	--color: #181818;
 }
 
+/* Custom font */
 @font-face {
   font-family: 'autumn';
   src: url('Autumninnovember-yPR3.ttf');
 }
+
 body {
 	background-color: var(--dark-moss-green);
 	color: var(--black-bean);
