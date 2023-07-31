@@ -12,6 +12,10 @@
 	--color: #181818;
 }
 
+@font-face {
+  font-family: 'autumn';
+  src: url('Autumninnovember-yPR3.ttf');
+}
 body {
 	background-color: var(--dark-moss-green);
 	color: var(--color);
@@ -21,6 +25,7 @@ h1 {
 	text-align: center;
 	font-weight: bold;
 	font-size: 3em;
+  font-family: 'autumn';
 }
 
 .form {
