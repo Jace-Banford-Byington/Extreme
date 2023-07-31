@@ -27,9 +27,9 @@ function getBoard(){
 }
 
 function getNames(){
-    playerOne = document.getElementById('playerOneName').value.trim() || 'Player One';
-    playerTwo = document.getElementById('playerTwoName').value.trim() || 'Player Two';
-
+    playerOneName = document.getElementById('playerOneName').value.trim() || 'Player One';
+    playerTwoName = document.getElementById('playerTwoName').value.trim() || 'Player Two';
+    console.log("Got the names", playerOneName, playerTwoName)
 }
 
 function checkWin(row, col) {
@@ -68,6 +68,7 @@ function checkWin(row, col) {
   }
 
 function captureOpponentPieces(row, col, rowDirection, colDirection) {
+  getNames();
     const opponent = currentPlayer === playerOne ? playerTwo : playerOne;
     const r = row + rowDirection;
     const c = col + colDirection;
@@ -85,6 +86,7 @@ function captureOpponentPieces(row, col, rowDirection, colDirection) {
   }
 
 function countMoves(rowDirection, colDirection) {
+
     let count = 1;
     for (let i = 1; i < winCount; i++) {
       const r = row + rowDirection * i;
@@ -110,8 +112,9 @@ function countMoves(rowDirection, colDirection) {
     if (gameOver || board[row][col] !== boardEmpty) {
       return;
     }
-
+    getNames();
     board[row][col] = currentPlayer;
+
     makeGameBoard();
 
     const count = checkWin(row, col);
@@ -123,9 +126,9 @@ function countMoves(rowDirection, colDirection) {
       alert(`${currentPlayer === playerOne ? playerOneName : playerTwoName} has 4 in a row!`);
     } else if (count >= countThree) {
       let message = `${currentPlayer === playerOne ? playerOneName : playerTwoName} has ${count} in a row!`;
-      if (count === countThree) {
-        message += "\nCapturing opponent's pieces!";
-      }
+      // if (count === countThree) {
+      //   message += "\nCapturing opponent's pieces!";
+      // }
       alert(message);
       const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
       for (const [rowDirection, colDirection] of directions) {
